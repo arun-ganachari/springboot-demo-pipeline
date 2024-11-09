@@ -16,6 +16,7 @@ node {
     stage("Deployment") {
       // sh 'nohup mvn spring-boot:run &'
       bat 'start /B mvn spring-boot:run'
+      bat 'curl http://localhost:8081/hello
     }
   }
 }
