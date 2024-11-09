@@ -1,6 +1,6 @@
 node {
   stage("Clone the project") {
-    git branch: 'main', url: 'https://github.com/arun-ganachari/springboot-demo-pipeline.git'
+    git branch: 'master', url: 'https://github.com/arun-ganachari/springboot-demo-pipeline.git'
   }
 
   stage("Compilation") {
