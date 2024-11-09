@@ -4,15 +4,18 @@ node {
   }
 
   stage("Compilation") {
-    sh "./mvnw clean install -DskipTests"
+    // Use bat instead of sh for Windows
+    bat 'mvnw.cmd clean install -DskipTests'
   }
 
   stage("Tests and Deployment") {
-    stage("Runing unit tests") {
-      sh "./mvnw test -Punit"
+    stage("Running unit tests") {
+      // Use bat for Windows
+      bat 'mvnw.cmd test -Punit'
     }
     stage("Deployment") {
-      sh 'nohup ./mvnw spring-boot:run &'
+      // Use bat for Windows, run in background using start /B
+      bat 'start /B mvnw.cmd spring-boot:run'
     }
   }
 }
