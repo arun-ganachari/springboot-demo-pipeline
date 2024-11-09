@@ -24,8 +24,9 @@ node {
 
       // bat 'start /B mvn spring-boot:run'
 
+      // Start Spring Boot in the background using PowerShell without the conflicting parameters
       powershell '''
-        Start-Process "mvn" -ArgumentList "spring-boot:run" -NoNewWindow -WindowStyle Hidden
+        Start-Process "mvn" -ArgumentList "spring-boot:run" -NoNewWindow
       '''
 
       // Sleep for a few seconds to ensure the app has started
