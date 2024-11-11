@@ -55,7 +55,7 @@ pipeline {
                 script {
                     try {
                         // Run Docker container from the built image
-                        bat "docker run -d -p 8081:8090 --name ${DOCKER_CONTAINER_NAME} ${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_TAG}"
+                        bat "docker run -d -p 8081:8081 --name ${DOCKER_CONTAINER_NAME} ${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_TAG}"
                     } catch (Exception e) {
                         echo "Error during Docker container run: ${e.getMessage()}"
                         error "Failed to start Docker container, terminating the pipeline."
